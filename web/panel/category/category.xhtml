@@ -8,19 +8,33 @@
 
 
 	<ui:define name="table">
-		<h:dataTable value="#{categoryBean.list}" var="c">
-			<h:column>
-				<f:facet name="header">ID</f:facet>
-					#{c.id}
-			</h:column>
-			<h:column>
-				<f:facet name="header">CATEGORY TITLE</f:facet>
-					#{c.category}
-			</h:column>
-		</h:dataTable>
+		<h3>Categories</h3>
+		<div class="text-success">
+			<hr />
+		</div>
+		<h:form>
+			<h:dataTable styleClass="table table-striped" value="#{categoryBean.list}" var="c">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+						#{c.id}
+				</h:column>
+				<h:column>
+					<f:facet name="header">CATEGORY TITLE</f:facet>
+					<h:commandLink action="#{categoryBean.setEntity(c)}" value="#{c.category}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:commandButton styleClass="btn btn-danger btn-sm" action="#{categoryBean.delete(c)}" value="Delete" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
 	</ui:define>
 
 	<ui:define name="form">
+		<h3 class="">Category Form</h3>
+		<div class="text-success">
+			<hr />
+		</div>
 		<h:form>
 			<div class="mb-3">
 				<label for="ctitle" class="form-label">Category Title</label>

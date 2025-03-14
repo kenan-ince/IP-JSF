@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="jakarta.faces.html"
+				xmlns:ui="jakarta.faces.facelets"
+				xmlns:f="jakarta.faces.core"
+				template="/panel/template.xhtml">
+
+
+	<ui:define name="table">
+		<h3>Posts</h3>
+		<div class="text-success">
+			<hr />
+		</div>
+		<h:form>
+			<h:dataTable styleClass="table table-striped" value="#{postBean.list}" var="c">
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+						#{c.id}
+				</h:column>
+				<h:column>
+					<f:facet name="header">CATEGORY</f:facet>
+						#{c.category.category}
+				</h:column>
+				<h:column>
+					<f:facet name="header">TITLE</f:facet>
+					<h:commandLink value="#{c.title}" action="#{postBean.setEntity(c)}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header"></f:facet>
+					<h:commandButton styleClass="btn btn-danger btn-sm" action="#{postBean.delete(c)}" value="Delete" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="form">
+		<h3 class="">Post Form</h3>
+		<div class="text-success">
+			<hr />
+		</div>
+		<h:form>
+			<div class="mb-3">
+				<label for="ctitle" class="form-label">Post Category</label>
+				<h:selectOneMenu id="categorySelect" styleClass="form-select" value="#{postBean.entity.category}">
+					<f:selectItems value="#{categoryBean.list}" var="c" itemLabel="#{c.category}" itemValue="#{c}" />
+				</h:selectOneMenu>
+			</div>
+
+			<div class="mb-3">
+				<label for="ctitle" class="form-label">Post Title</label>
+				<h:inputText id="post-title" styleClass="form-control" value="#{postBean.entity.title}"/>
+			</div>
+
+			<div class="mb-3">
+				<label for="ctitle" class="form-label">Post Context</label>
+				<h:inputTextarea id="post-context" rows="8" styleClass="form-control" value="#{postBean.entity.context}"/>
+			</div>
+			<div class="mb-3">
+				<div class="btn-group">
+					<h:commandButton rendered="#{postBean.entity.id == null}" action="#{postBean.create()}" value="Create" styleClass="btn btn-success" />
+					<h:commandButton rendered="#{postBean.entity.id != null}" action="#{postBean.update()}" value="Update" styleClass="btn btn-primary" />
+					<h:commandButton rendered="#{postBean.entity.id != null}" action="#{postBean.clear()}" value="Clear Form" styleClass="btn btn-secondary" />
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
