@@ -7,4 +7,4 @@ Kullanılan teknolojiler şu şekilde:
 5. JPA (eclipselink) with JTA source
 6. PostgreSQL
 
-Özetle: Bilgisayarınıza Netbeans 25, JDK 21 yükledikten sonra Netbeans'ı başlatarak Sunucular altında Glassfish uygulama sunucusunu ekledikten sonra projeyi açarak çalıştırabilirsiniz. 
+Özetle: Bilgisayarınıza Netbeans 25, JDK 21 yükledikten sonra Netbeans'ı başlatarak Sunucular altında Glassfish uygulama sunucusunu ekledikten sonra projeyi açarak çalıştırabilirsiniz. Bu versiyonda Maven kullanılmıştır. Diğer versiyonlarında ayrı bir proje olarak eklenecektir.
