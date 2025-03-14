@@ -1,6 +1,6 @@
 Bu proje, derste aşama aşama geliştirmiş olduğumuz projedir.
 Kullanılan teknolojiler şu şekilde:
-Jakarta EE Platform 10
-JSF 4.0
-Glassfish 7
-JPA (eclipselink) with JTA source
+1. Jakarta EE Platform 10.
+2. JSF 4.0.
+3. Glassfish 7.
+4. JPA (eclipselink) with JTA source
