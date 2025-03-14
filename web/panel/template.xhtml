@@ -2,9 +2,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
-	  xmlns:ui="jakarta.faces.facelets">
+	  xmlns:ui="jakarta.faces.facelets"
+	  xmlns:jsf="jakarta.faces">
     <h:head>
 		<h:outputStylesheet library="css"  name="bootstrap.min.css" />
+		<h:outputStylesheet library="css"  name="style.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
         <title>Facelet Title</title>
     </h:head>
     <h:body>
@@ -13,7 +16,7 @@
 				<ui:include src="/panel/assets/header.xhtml" />
 			</div>
 		</div>
-		<div class="container">
+		<div class="container" jsf:id="main-content">
 			<div class="row">
 				
 				<div class="col-7 mt-3">

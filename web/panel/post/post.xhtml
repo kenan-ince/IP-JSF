@@ -4,6 +4,7 @@
 				xmlns:h="jakarta.faces.html"
 				xmlns:ui="jakarta.faces.facelets"
 				xmlns:f="jakarta.faces.core"
+				xmlns:fn="jakarta.tags.functions"
 				template="/panel/template.xhtml">
 
 
@@ -24,7 +25,7 @@
 				</h:column>
 				<h:column>
 					<f:facet name="header">TITLE</f:facet>
-					<h:commandLink value="#{c.title}" action="#{postBean.setEntity(c)}" />
+					<h:commandLink value="#{fn:substring(c.title,0, 50)} #{c.title.length() > 50 ? '...' : ''}" action="#{postBean.setEntity(c)}" />
 				</h:column>
 				<h:column>
 					<f:facet name="header"></f:facet>

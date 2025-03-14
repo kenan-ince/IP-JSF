@@ -1,16 +1,11 @@
 package converter;
 
 import DAO.CategoryDAO;
-import controller.CategoryBean;
 import entity.Category;
-import jakarta.ejb.EJB;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 

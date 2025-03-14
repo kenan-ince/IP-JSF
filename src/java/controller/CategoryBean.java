@@ -14,6 +14,8 @@ public class CategoryBean implements Serializable {
 
 	private Category entity;
 	private List<Category> list;
+	private List<Category> paginatedList;
+	private List<Category> selectionList;
 	
 	@Inject
 	private CategoryDAO dao;
@@ -28,6 +30,14 @@ public class CategoryBean implements Serializable {
 	
 	public void delete(Category c) {
 		this.dao.delete(c);
+	}
+	
+	public void update() {
+		this.dao.update(entity);
+	}
+	
+	public void clear() {
+		this.entity = new Category();
 	}
 
 	public Category getEntity() {
@@ -44,6 +54,23 @@ public class CategoryBean implements Serializable {
 	public List<Category> getList() {
 		this.list = this.dao.findAll();
 		return list;
+	}
+
+	public List<Category> getPaginatedList() {
+		return paginatedList;
+	}
+
+	public void setPaginatedList(List<Category> paginatedList) {
+		this.paginatedList = paginatedList;
+	}
+
+	public List<Category> getSelectionList() {
+		this.selectionList = this.dao.findExcept(entity.getId());
+		return selectionList;
+	}
+
+	public void setSelectionList(List<Category> selectionList) {
+		this.selectionList = selectionList;
 	}
 
 	public void setList(List<Category> list) {

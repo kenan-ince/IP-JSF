@@ -2,22 +2,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 				xmlns:h="jakarta.faces.html"
-				xmlns:ui="jakarta.faces.facelets">
+				xmlns:ui="jakarta.faces.facelets"
+				xmlns:f="jakarta.faces.core">
 
-	<nav class="navbar navbar-expand-lg bg-body-tertiary border shadow-sm">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom shadow-sm">
 		<div class="container">
 			<a class="navbar-brand" href="#">Navbar</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
-				<h:form>
+				<h:form id="nav-form">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<h:commandLink styleClass="nav-link active" action="/panel/category/category?faces-redirect=true" value="Category" />
+							<h:commandLink styleClass="nav-link active" action="/panel/category/category?faces-redirect=true" value="Category" >
+								<f:ajax execute="@form" render="main-content" />
+							</h:commandLink>
 						</li>
 						<li class="nav-item">
-							<h:commandLink styleClass="nav-link active" action="/panel/post/post?faces-redirect=true" value="Post" />
+							<h:commandLink styleClass="nav-link active" action="/panel/post/post?faces-redirect=true" value="Post">
+								<f:ajax execute="nav-form" render="main-content" />
+							</h:commandLink>
 						</li>
 					</ul>
 				</h:form>

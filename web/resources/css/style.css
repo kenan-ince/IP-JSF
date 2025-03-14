@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 14, 2025, 10:23:37 PM
+    Author     : kenanince
+*/
+
+tr.selected td{
+	background-color: rgba(var(--bs-success-rgb),var(--bs-bg-opacity))!important;
+	color: var(--bs-warning-text-emphasis)!important;
+	text-decoration: underline;
+}
+
+.table-link {
+	text-decoration: none;
+}

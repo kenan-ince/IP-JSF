@@ -1,14 +1,11 @@
 package controller;
 
-import DAO.CategoryDAO;
 import DAO.PostDAO;
-import entity.Category;
 import entity.Post;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Named

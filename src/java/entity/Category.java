@@ -1,10 +1,12 @@
 package entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
@@ -15,6 +17,9 @@ public class Category implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@ManyToOne(optional = true, cascade = CascadeType.REFRESH)
+	private Category parent;
 	
 	@Column(unique = true)
 	private String category;
@@ -36,6 +41,14 @@ public class Category implements Serializable{
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public Category getParent() {
+		return parent;
+	}
+
+	public void setParent(Category parent) {
+		this.parent = parent;
 	}
 
 	@Override

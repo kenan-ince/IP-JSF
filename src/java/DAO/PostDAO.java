@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
 
 import entity.Post;
@@ -10,10 +6,6 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.Query;
 import java.util.List;
 
-/**
- *
- * @author kenanince
- */
 @Stateless
 @LocalBean
 public class PostDAO extends BaseFacade{
@@ -23,7 +15,6 @@ public class PostDAO extends BaseFacade{
 	}
 	
 	public void create(Post p) {
-		System.out.println("-------------: " + p);
 		this.getEM().persist(p);
 	}
 
